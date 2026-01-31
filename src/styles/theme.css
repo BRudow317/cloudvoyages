@@ -1,10 +1,13 @@
 @custom-variant dark (&:is(.dark *));
+@custom-variant cv-dark (&:is(.cv-dark *));
+@custom-variant cv-light (&:is(.cv-light *));
 
 :root {
+  --font-family: 'ansi-serif','Roboto', system-ui, sans-serif;
   --font-size: 16px;
-  --background: #ffffff;
+  --background: var(--cv-cloud);
   --foreground: oklch(0.145 0 0);
-  --card: #ffffff;
+  --card: var(--cv-cloud);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -17,7 +20,7 @@
   --accent: #e9ebef;
   --accent-foreground: #030213;
   --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
+  --destructive-foreground: var(--cv-cloud);
   --border: rgba(0, 0, 0, 0.1);
   --input: transparent;
   --input-background: #f3f3f5;
@@ -39,6 +42,20 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Cloud Voyages Theme Colors */
+  --cv-deep-blue: #041221;
+  --cv-dark-blue: #062438;
+  --cv-deep-azure: #143f56;
+  --cv-dark-azure: #2a5d75;
+  --cv-azure: #1a72a2;
+  --cv-light-azure: #4eacc8;
+  --cv-sky: #32b8d8;
+  --cv-dark-sky: #9acce0;
+  --cv-dark-cloud: #4a7084;
+  --cv-grey-cloud: #6195ad;
+  --cv-storm-cloud: #59889e;
+  --cv-cloud: #d7f1f6;
 }
 
 .dark {
@@ -76,6 +93,82 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+}
+/* Brand Themes */
+.cv-dark {
+  --normal: #ffffff;
+  --background: var(--cv-deep-blue);
+  --foreground: var(--cv-cloud);
+  --card: var(--cv-dark-blue);
+  --card-foreground: var(--cv-cloud);
+  --popover: var(--cv-dark-blue);
+  --popover-foreground: var(--cv-cloud);
+  --primary: var(--cv-sky);
+  --primary-foreground: var(--cv-deep-blue);
+  --secondary: var(--cv-deep-azure);
+  --secondary-foreground: var(--cv-deep-blue);
+  --muted: var(--cv-deep-azure);
+  --muted-foreground: var(--cv-grey-cloud);
+  --accent: var(--cv-azure);
+  --accent-foreground: var(--cv-cloud);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: var(--cv-deep-azure);
+  --input: var(--cv-deep-azure);
+  --ring: var(--cv-light-azure);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: var(--cv-deep-blue);
+  --sidebar-foreground: var(--cv-cloud);
+  --sidebar-primary: var(--cv-sky);
+  --sidebar-primary-foreground: var(--cv-deep-blue);
+  --sidebar-accent: var(--cv-dark-azure);
+  --sidebar-accent-foreground: var(--cv-cloud);
+  --sidebar-border: var(--cv-deep-azure);
+  --sidebar-ring: var(--cv-light-azure);
+}
+
+.cv-light {
+  --normal: #000000;
+  --background: var(--cv-cloud);
+  --foreground: var(--cv-deep-blue);
+  --card: var(--cv-cloud);
+  --card-foreground: var(--cv-deep-blue);
+  --popover: var(--cv-cloud);
+  --popover-foreground: var(--cv-deep-blue);
+  --primary: var(--cv-azure);
+  --primary-foreground: var(--cv-cloud);
+  --secondary: var(--cv-cloud);
+  --secondary-foreground: var(--cv-deep-blue);
+  --muted: var(--cv-cloud);
+  --muted-foreground: var(--cv-dark-cloud);
+  --accent: var(--cv-light-azure);
+  --accent-foreground: var(--cv-deep-blue);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: var(--cv-dark-sky);
+  --input: var(--cv-cloud);
+  --ring: var(--cv-azure);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: var(--cv-cloud);
+  --sidebar-foreground: var(--cv-deep-blue);
+  --sidebar-primary: var(--cv-azure);
+  --sidebar-primary-foreground: var(--cv-cloud);
+  --sidebar-accent: var(--cv-dark-sky);
+  --sidebar-accent-foreground: var(--cv-deep-blue);
+  --sidebar-border: var(--cv-dark-sky);
+  --sidebar-ring: var(--cv-azure);
 }
 
 @theme inline {
@@ -126,56 +219,7 @@
 
   body {
     @apply bg-background text-foreground;
-  }
-
-  /**
-  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
-  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
-  */
-
-  html {
-    font-size: var(--font-size);
-  }
-
-  h1 {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h2 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h3 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h4 {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  label {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  button {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  input {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.5;
+    font-family: var(--font-family);
   }
 }
+

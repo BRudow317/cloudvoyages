@@ -1,13 +1,11 @@
-// src/components/ui/button/Button.jsx
-import React from 'react';
-import styles from './Button.module.css';
-
 /**
  * UI Primitive: Button
  * - Keeps styling consistent via variants/sizes
  * - Supports native button props
  * - Supports refs (useful for focus management)
  */
+import React from 'react';
+import styles from './Button.module.css';
 const Button = React.forwardRef(function Button(
   {
     children,

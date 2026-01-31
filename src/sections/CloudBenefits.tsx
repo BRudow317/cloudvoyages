@@ -27,11 +27,11 @@ const workloadData = [
 
 export function CloudBenefits() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl mb-4">The Cloud Advantage: By the Numbers</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl mb-4 text-foreground">The Cloud Advantage: By the Numbers</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Data-driven insights showing why businesses are moving to the cloud and why expert guidance matters
           </p>
         </div>
@@ -40,109 +40,109 @@ export function CloudBenefits() {
           {/* Cost Savings Chart */}
           <Card className="p-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-green-100 rounded-lg">
-                <DollarSign className="w-6 h-6 text-green-600" />
+              <div className="p-2 bg-secondary rounded-lg">
+                <DollarSign className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl">Cost Efficiency Over Time</h3>
-                <p className="text-sm text-gray-600">5-Year Total Cost Comparison (Indexed)</p>
+                <h3 className="text-xl text-foreground">Cost Efficiency Over Time</h3>
+                <p className="text-sm text-muted-foreground">5-Year Total Cost Comparison (Indexed)</p>
               </div>
             </div>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={costSavingsData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="year" />
-                <YAxis />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="year" stroke="var(--muted-foreground)" />
+                <YAxis stroke="var(--muted-foreground)" />
                 <Tooltip />
-                <Line 
-                  type="monotone" 
-                  dataKey="traditional" 
-                  stroke="#94a3b8" 
+                <Line
+                  type="monotone"
+                  dataKey="traditional"
+                  stroke="var(--muted-foreground)"
                   strokeWidth={2}
                   name="Traditional Infrastructure"
                 />
-                <Line 
-                  type="monotone" 
-                  dataKey="cloud" 
-                  stroke="#3b82f6" 
+                <Line
+                  type="monotone"
+                  dataKey="cloud"
+                  stroke="var(--primary)"
                   strokeWidth={2}
                   name="Cloud with Experts"
                 />
               </LineChart>
             </ResponsiveContainer>
-            <p className="text-sm text-gray-600 mt-4">
-              <strong>62% cost reduction</strong> by Year 5 when migrating with expert guidance
+            <p className="text-sm text-muted-foreground mt-4">
+              <strong className="text-foreground">62% cost reduction</strong> by Year 5 when migrating with expert guidance
             </p>
           </Card>
 
           {/* Performance Comparison */}
           <Card className="p-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <TrendingUp className="w-6 h-6 text-blue-600" />
+              <div className="p-2 bg-secondary rounded-lg">
+                <TrendingUp className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl">Performance & Capabilities</h3>
-                <p className="text-sm text-gray-600">Cloud vs Traditional Infrastructure (%)</p>
+                <h3 className="text-xl text-foreground">Performance & Capabilities</h3>
+                <p className="text-sm text-muted-foreground">Cloud vs Traditional Infrastructure (%)</p>
               </div>
             </div>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={performanceData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="metric" />
-                <YAxis domain={[0, 100]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="metric" stroke="var(--muted-foreground)" />
+                <YAxis domain={[0, 100]} stroke="var(--muted-foreground)" />
                 <Tooltip />
-                <Bar dataKey="traditional" fill="#94a3b8" name="Traditional" />
-                <Bar dataKey="cloud" fill="#3b82f6" name="Cloud" />
+                <Bar dataKey="traditional" fill="var(--muted-foreground)" name="Traditional" />
+                <Bar dataKey="cloud" fill="var(--primary)" name="Cloud" />
               </BarChart>
             </ResponsiveContainer>
-            <p className="text-sm text-gray-600 mt-4">
-              <strong>Cloud infrastructure</strong> outperforms traditional systems across all metrics
+            <p className="text-sm text-muted-foreground mt-4">
+              <strong className="text-foreground">Cloud infrastructure</strong> outperforms traditional systems across all metrics
             </p>
           </Card>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <Card className="p-6 text-center">
-            <div className="inline-flex p-3 bg-blue-100 rounded-full mb-4">
-              <Zap className="w-8 h-8 text-blue-600" />
+            <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
+              <Zap className="w-8 h-8 text-primary" />
             </div>
-            <div className="text-4xl mb-2">3x</div>
-            <div className="text-gray-600">Faster Deployment</div>
-            <p className="text-sm text-gray-500 mt-2">Deploy applications in hours, not weeks</p>
+            <div className="text-4xl mb-2 text-primary">3x</div>
+            <div className="text-muted-foreground">Faster Deployment</div>
+            <p className="text-sm text-muted-foreground mt-2">Deploy applications in hours, not weeks</p>
           </Card>
 
           <Card className="p-6 text-center">
-            <div className="inline-flex p-3 bg-purple-100 rounded-full mb-4">
-              <Shield className="w-8 h-8 text-purple-600" />
+            <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
+              <Shield className="w-8 h-8 text-accent" />
             </div>
-            <div className="text-4xl mb-2">99.9%</div>
-            <div className="text-gray-600">Uptime SLA</div>
-            <p className="text-sm text-gray-500 mt-2">Enterprise-grade reliability guaranteed</p>
+            <div className="text-4xl mb-2 text-primary">99.9%</div>
+            <div className="text-muted-foreground">Uptime SLA</div>
+            <p className="text-sm text-muted-foreground mt-2">Enterprise-grade reliability guaranteed</p>
           </Card>
 
           <Card className="p-6 text-center">
-            <div className="inline-flex p-3 bg-green-100 rounded-full mb-4">
-              <DollarSign className="w-8 h-8 text-green-600" />
+            <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
+              <DollarSign className="w-8 h-8 text-primary" />
             </div>
-            <div className="text-4xl mb-2">40%</div>
-            <div className="text-gray-600">Cost Reduction</div>
-            <p className="text-sm text-gray-500 mt-2">Average savings in first year alone</p>
+            <div className="text-4xl mb-2 text-primary">40%</div>
+            <div className="text-muted-foreground">Cost Reduction</div>
+            <p className="text-sm text-muted-foreground mt-2">Average savings in first year alone</p>
           </Card>
 
           <Card className="p-6 text-center">
-            <div className="inline-flex p-3 bg-cyan-100 rounded-full mb-4">
-              <TrendingUp className="w-8 h-8 text-cyan-600" />
+            <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
+              <TrendingUp className="w-8 h-8 text-primary" />
             </div>
-            <div className="text-4xl mb-2">∞</div>
-            <div className="text-gray-600">Scalability</div>
-            <p className="text-sm text-gray-500 mt-2">Scale up or down on demand instantly</p>
+            <div className="text-4xl mb-2 text-primary">∞</div>
+            <div className="text-muted-foreground">Scalability</div>
+            <p className="text-sm text-muted-foreground mt-2">Scale up or down on demand instantly</p>
           </Card>
         </div>
 
         {/* Workload Distribution */}
         <Card className="p-6">
-          <h3 className="text-xl mb-6 text-center">Typical Cloud Workload Distribution</h3>
+          <h3 className="text-xl mb-6 text-center text-foreground">Typical Cloud Workload Distribution</h3>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <ResponsiveContainer width={300} height={300}>
               <PieChart>
@@ -167,13 +167,13 @@ export function CloudBenefits() {
               {workloadData.map((item) => (
                 <div key={item.name} className="flex items-center gap-3">
                   <div className="w-4 h-4 rounded" style={{ backgroundColor: item.color }} />
-                  <span className="text-gray-700">{item.name}</span>
-                  <span className="text-gray-500">({item.value}%)</span>
+                  <span className="text-foreground">{item.name}</span>
+                  <span className="text-muted-foreground">({item.value}%)</span>
                 </div>
               ))}
             </div>
           </div>
-          <p className="text-sm text-gray-600 text-center mt-6">
+          <p className="text-sm text-muted-foreground text-center mt-6">
             Expert optimization across all workload types ensures maximum efficiency and cost-effectiveness
           </p>
         </Card>

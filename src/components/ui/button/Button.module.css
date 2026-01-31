@@ -1,4 +1,18 @@
-/* src/components/ui/button/Button.module.css */
+/**
+  * UI Primitive: Button
+  * 
+  * Features:
+  * - Variants: default, primary, danger, link, success, submit
+  * - Sizes: sm, md, lg
+  * - Options: fullWidth, loading
+  * - Supports native button props
+  * - Supports refs (useful for focus management)
+  src/components/ui/button/Button.module.css 
+  */
+
+
+
+
 
 .button {
   font: inherit;

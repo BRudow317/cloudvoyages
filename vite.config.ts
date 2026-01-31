@@ -1,35 +1,39 @@
-import { defineConfig } from 'vite'
-import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
-import react from '@vitejs/plugin-react'
+/**
+ * Vite configuration file
+ *
+ * The React and Tailwind plugins are both required for Make, even if Tailwind
+ * is not being actively used – do not remove them
+ */
+import { defineConfig } from "vite";
+import path from "path";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
-    react(),
-    tailwindcss(),
-  ],
+  plugins: [react(), tailwindcss()],
   server: {
-    allowedHosts: [
-      "quickbitlabs.com",
-      "www.quickbitlabs.com",
-      "cloudvoyages.com",
-      "www.cloudvoyages.com",
-      "millerlandman.com",
-      "www.millerlandman.com",
-      "miller-land-management.com",
-      "www.miller-land-management.com",
-    ],
+    allowedHosts: ["cloudvoyages.com", "www.cloudvoyages.com"],
+    watch: {
+      ignored: [
+        "**/bin/**",
+        "**/lib/**",
+        "**/logs/**",
+        "**/node_modules/**",
+        "**/.git/**",
+        "**/build/**",
+        "**/.Library/**",
+        "**/dist/**",
+      ],
+    },
   },
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     emptyOutDir: true,
   },
   resolve: {
     alias: {
       // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-})
+});
