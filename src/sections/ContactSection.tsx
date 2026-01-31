@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin} from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 import { PERSONAL_DATA } from '@/constants/PERSONAL_DATA';
