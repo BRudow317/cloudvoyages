@@ -78,7 +78,11 @@ const packages = [
   },
 ];
 
-export function SmallBusinessSolution() {
+export function SmallBusinessSolution({
+  onGetStarted,
+}: {
+  onGetStarted?: () => void;
+}) {
   return (
     <section className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,6 +153,7 @@ export function SmallBusinessSolution() {
                 <Button
                   className={`w-full ${pkg.popular ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : ''}`}
                   variant={pkg.popular ? 'default' : 'outline'}
+                  onClick={onGetStarted}
                 >
                   Get Started
                 </Button>
@@ -165,7 +170,7 @@ export function SmallBusinessSolution() {
               to be affordable, effective, and easy to manage—so you can focus on running your business.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" onClick={onGetStarted}>
                 Schedule Free Consultation
               </Button>
               <Button size="lg" variant="outline" className="border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10">

@@ -2,7 +2,11 @@ import { Cloud, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
-export function Header() {
+export function Header({
+  onGetStarted,
+}: {
+  onGetStarted?: () => void;
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -27,7 +31,7 @@ export function Header() {
             <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
               Contact
             </a>
-            <Button className="bg-blue-600 hover:bg-blue-700">
+            <Button className="bg-blue-600 hover:bg-blue-700" onClick={onGetStarted}>
               Get Started
             </Button>
           </nav>
@@ -55,7 +59,7 @@ export function Header() {
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
                 Contact
               </a>
-              <Button className="bg-blue-600 hover:bg-blue-700 w-full">
+              <Button className="bg-blue-600 hover:bg-blue-700 w-full" onClick={onGetStarted}>
                 Get Started
               </Button>
             </nav>

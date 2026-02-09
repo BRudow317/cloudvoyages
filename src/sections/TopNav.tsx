@@ -3,7 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Brand, BrandText } from '@/components/ui/Brand';
 import { useState } from 'react';
 
-export function TopNav() {
+export function TopNav({
+  onGetStarted,
+}: {
+  onGetStarted?: () => void;
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 //<Cloud className="w-8 h-8 text-blue-600" />
   return (
@@ -29,7 +33,10 @@ export function TopNav() {
             <a href="#contact" className="text-normal hover:text-primary transition-colors">
               Contact
             </a>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={onGetStarted}
+            >
               Get Started
             </Button>
           </nav>
@@ -57,7 +64,10 @@ export function TopNav() {
               <a href="#contact" className="text-normal hover:text-primary transition-colors">
                 Contact
               </a>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
+              <Button
+                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
+                onClick={onGetStarted}
+              >
                 Get Started
               </Button>
             </nav>

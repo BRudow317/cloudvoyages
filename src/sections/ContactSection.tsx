@@ -5,7 +5,6 @@ import { PERSONAL_DATA } from '@/constants/PERSONAL_DATA';
 import { CvForm } from '@/components/ui/CvForm';
 
 export function ContactSection() {
-  
 
   return (
     <section className="py-20 bg-background/0">

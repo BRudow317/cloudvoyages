@@ -4,7 +4,13 @@ import { BrandText } from '@/components/ui/Brand';
 // import { ImageWithFallback } from '@/components/Fallback/ImageWithFallback';
 // import CloudVoyagesLogo from '@/assets/CloudVoyagesLogo6.png';
 
-export function Hero() {
+export function Hero({
+  onGetStarted,
+  onScheduleConsultation,
+}: {
+  onGetStarted?: () => void;
+  onScheduleConsultation?: () => void;
+}) {
   return (
     <section className="relative overflow-hidden bg-background/50 pt-24 pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,11 +34,20 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                onClick={onGetStarted}
+              >
                 Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-border text-foreground">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-border text-foreground"
+                onClick={onScheduleConsultation}
+              >
                 Schedule Consultation
               </Button>
             </div>
