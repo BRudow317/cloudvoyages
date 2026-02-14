@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 import { Send, Loader2 } from 'lucide-react';
 import { useState } from 'react';
-import { cv_form_service } from '@/apis/cv_form_service';
+import { cv_form_service } from '@/api/cv_form_service';
 
 export const CvForm = () => {
 

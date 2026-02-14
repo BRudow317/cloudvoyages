@@ -1,4 +1,5 @@
 import { Cloud, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Link } from 'react-router';
 
 export function Footer() {
   return (
@@ -29,9 +30,10 @@ export function Footer() {
           <div>
             <h3 className="text-foreground mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Case Studies</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
+              <li><Link to="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link to="/internships" className="hover:text-primary transition-colors">Internships</Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
             </ul>
           </div>
@@ -63,7 +65,7 @@ export function Footer() {
             © 2026 Cloud Voyages. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-primary transition-colors">Cookie Policy</a>
           </div>
