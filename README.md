@@ -14,8 +14,6 @@ This repository contains the source code for the Cloud Voyages website.
 ## Notes
 "react-router-dom": "^7.10.1" Is deprecated as of version 7
 
-Status: Get Started and Schedule Consultation now open the consultation form dialog.
-
 ## TODO
 1. Replace the View Portfolio CTA with a valid route or external link.
 2. Add analytics events for consultation dialog opens and form submissions.

@@ -1,5 +1,4 @@
 import { TopNav } from '@/sections/TopNav';
-
 import { Footer } from '@/sections/Footer';
 import { Outlet } from 'react-router';
 import image from '@/assets/NightSky.jpg';
@@ -31,7 +30,7 @@ function LayoutShell() {
   return (
     <div
       style={{ backgroundImage: `url(${image})` }}
-      className="min-h-screen bg-cover bg-fixed bg-center flex-grow"
+      className="min-h-screen bg-center bg-no-repeat bg-scroll bg-[length:100%_auto] sm:bg-cover sm:bg-fixed flex-grow"
     >
       <TopNav onGetStarted={openDialog} />
       <main>
