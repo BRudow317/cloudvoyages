@@ -3,11 +3,11 @@
  */
 import { ArrowRight, BadgeDollarSign, ShieldCheck, Timer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import Card from '@/components/ui/card/Card';
 import { BrandText } from '@/components/ui/Brand';
 import { ImageWithFallback } from '@/components/Fallback/ImageWithFallback';
-import { SmallBusinessSolution } from '@/sections/SmallBusinessSolution';
-import { ContactSection } from '@/sections/ContactSection';
+import { SmallBusinessSolution } from '@/components/sections/SmallBusinessSolution';
+import { ContactSection } from '@/components/sections/ContactSection';
 import { useConsultationDialog } from '@/context/ConsultationDialogContext';
 
 export const SmallBusiness = () => {

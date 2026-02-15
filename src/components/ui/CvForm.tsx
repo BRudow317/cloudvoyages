@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { Card } from '@/components/ui/card';
+import Card from '@/components/ui/card/Card';
 import { Send, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { cv_form_service } from '@/api/cv_form_service';

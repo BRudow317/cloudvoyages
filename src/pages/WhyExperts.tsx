@@ -1,16 +1,16 @@
 /**
- * @PageName Benefits
+ * @PageName WhyExperts
  */
 import { ArrowRight, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BrandText } from '@/components/ui/Brand';
 import { ImageWithFallback } from '@/components/Fallback/ImageWithFallback';
-import { CloudBenefits } from '@/sections/CloudBenefits';
-import { WhyExperts } from '@/sections/WhyExperts';
-import { ContactSection } from '@/sections/ContactSection';
+import { CloudAdvantageData } from '@/components/sections/CloudAdvantageData';
+import { Experts } from '@/components/sections/Experts';
+import { ContactSection } from '@/components/sections/ContactSection';
 import { useConsultationDialog } from '@/context/ConsultationDialogContext';
 
-export const Benefits = () => {
+export const WhyExperts = () => {
   const { openDialog } = useConsultationDialog();
 
   return (
@@ -56,11 +56,11 @@ export const Benefits = () => {
         </div>
       </section>
 
-      <div id="benefits">
-        <CloudBenefits />
+      <div id="advantage">
+        <CloudAdvantageData />
       </div>
       <div id="expertise">
-        <WhyExperts />
+        <Experts />
       </div>
       <div id="contact">
         <ContactSection />
@@ -68,3 +68,4 @@ export const Benefits = () => {
     </div>
   );
 };
+

@@ -2,9 +2,9 @@
  * @PageName Home
  *
  */
-import { Hero } from '@/sections/Hero';
-import { SmallBusinessSolution } from '@/sections/SmallBusinessSolution';
-import { ContactSection } from '@/sections/ContactSection';
+import { Hero } from '@/components/sections/Hero';
+import { SmallBusinessSolution } from '@/components/sections/SmallBusinessSolution';
+import { ContactSection } from '@/components/sections/ContactSection';
 import { useConsultationDialog } from '@/context/ConsultationDialogContext';
 
 export const Home = () => {

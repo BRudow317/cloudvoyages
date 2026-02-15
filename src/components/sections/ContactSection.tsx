@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin} from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import Card from '@/components/ui/card/Card';
 
 import { PERSONAL_DATA } from '@/constants/PERSONAL_DATA';
 import { CvForm } from '@/components/ui/CvForm';
@@ -7,11 +7,11 @@ import { CvForm } from '@/components/ui/CvForm';
 export function ContactSection() {
 
   return (
-    <section className="py-20 bg-background/0">
+    <section className="py-20 bg-background/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4 text-foreground">Ready to Start Your Cloud Journey?</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="bg-background/25 text-xl text-primary max-w-3xl mx-auto">
             Get in touch with our team for a free consultation. We'll assess your needs and
             provide a customized roadmap for your cloud transformation.
           </p>
@@ -34,7 +34,7 @@ export function ContactSection() {
               <Mail className="w-6 h-6 text-accent" />
             </div>
             <h3 className="text-xl mb-2 text-foreground">Email Us</h3>
-            <p className="text-muted-foreground mb-2">We respond within 4 hours</p>
+            <p className="text-muted-foreground mb-2">24 hour SLA</p>
             <a href={`mailto:${PERSONAL_DATA.email}`} className="text-accent hover:underline">
               {PERSONAL_DATA.email}
             </a>

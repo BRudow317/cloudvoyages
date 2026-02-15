@@ -10,8 +10,9 @@ import {
 	Sparkles,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import Card from '@/components/ui/card/Card';
 import { BrandText } from '@/components/ui/Brand';
+import { Section } from '@/components/sections/section';
 import { ImageWithFallback } from '@/components/Fallback/ImageWithFallback';
 import { PERSONAL_DATA } from '@/constants/PERSONAL_DATA';
 
@@ -52,7 +53,7 @@ const openInternships: Array<{ title: string; location: string; term: string }> 
 export const Internships = () => {
 	return (
 		<div>
-			<section className="relative overflow-hidden bg-background/50 pt-24 pb-16">
+			<Section className="relative overflow-hidden" padding="hero">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-10 items-center">
 						<div className="space-y-8">
@@ -92,9 +93,9 @@ export const Internships = () => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</Section>
 
-			<section className="py-20 bg-muted">
+			<Section variant="muted">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-16">
 						<h2 className="text-4xl mb-4 text-foreground">What you will experience</h2>
@@ -115,9 +116,9 @@ export const Internships = () => {
 						))}
 					</div>
 				</div>
-			</section>
+			</Section>
 
-			<section className="py-20 bg-background">
+			<Section variant="plain">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-12">
 						<div>
@@ -146,9 +147,9 @@ export const Internships = () => {
 						</Card>
 					</div>
 				</div>
-			</section>
+			</Section>
 
-			<section id="open-internships" className="py-20 bg-background/50">
+			<Section id="open-internships">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-12">
 						<h2 className="text-4xl mb-4 text-foreground">Open internships</h2>
@@ -182,7 +183,7 @@ export const Internships = () => {
 						</div>
 					)}
 				</div>
-			</section>
+			</Section>
 		</div>
 	);
 };

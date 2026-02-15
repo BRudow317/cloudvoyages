@@ -1,0 +1,12 @@
+.section1 {
+    background-color: var(--cv-deep-azure);
+    color: var(--cv-cloud);
+}
+.section2 {
+    background-color: var(--cv-azure);
+    color: var(--cv-deep-blue);
+}
+.section3 {
+    background-color: var(--cv-dark-sky);
+    color: var(--cv-cloud);
+}

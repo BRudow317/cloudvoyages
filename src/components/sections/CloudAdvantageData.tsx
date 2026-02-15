@@ -1,6 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
 import { TrendingUp, DollarSign, Zap, Shield } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import Card from '@/components/ui/card/Card';
 
 const costSavingsData = [
   { year: 'Year 1', traditional: 100, cloud: 65 },
@@ -25,9 +25,35 @@ const workloadData = [
   { name: 'Other', value: 5, color: '#a78bfa' },
 ];
 
-export function CloudBenefits() {
+export function CloudAdvantageData() {
+  const renderWorkloadLabel = ({ cx, cy, midAngle, outerRadius, name, percent }: {
+    cx: number;
+    cy: number;
+    midAngle: number;
+    outerRadius: number;
+    name: string;
+    percent: number;
+  }) => {
+    const radius = outerRadius + 14;
+    const x = cx + radius * Math.cos((-midAngle * Math.PI) / 180);
+    const y = cy + radius * Math.sin((-midAngle * Math.PI) / 180);
+
+    return (
+      <text
+        x={x}
+        y={y}
+        fill="var(--muted-foreground)"
+        textAnchor={x > cx ? 'start' : 'end'}
+        dominantBaseline="central"
+        className="text-xs"
+      >
+        {`${name} ${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background/35">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4 text-foreground">The Cloud Advantage: By the Numbers</h2>
@@ -38,7 +64,7 @@ export function CloudBenefits() {
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Cost Savings Chart */}
-          <Card className="p-6">
+          <Card className="bg-background/50 p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 bg-secondary rounded-lg">
                 <DollarSign className="w-6 h-6 text-primary" />
@@ -76,7 +102,7 @@ export function CloudBenefits() {
           </Card>
 
           {/* Performance Comparison */}
-          <Card className="p-6">
+          <Card className="bg-background/50 p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 bg-secondary rounded-lg">
                 <TrendingUp className="w-6 h-6 text-primary" />
@@ -103,7 +129,7 @@ export function CloudBenefits() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <Card className="p-6 text-center">
+          <Card className="bg-background/50 p-6 text-center">
             <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
               <Zap className="w-8 h-8 text-primary" />
             </div>
@@ -112,7 +138,7 @@ export function CloudBenefits() {
             <p className="text-sm text-muted-foreground mt-2">Deploy applications in hours, not weeks</p>
           </Card>
 
-          <Card className="p-6 text-center">
+          <Card className="bg-background/50 p-6 text-center">
             <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
               <Shield className="w-8 h-8 text-accent" />
             </div>
@@ -121,7 +147,7 @@ export function CloudBenefits() {
             <p className="text-sm text-muted-foreground mt-2">Enterprise-grade reliability guaranteed</p>
           </Card>
 
-          <Card className="p-6 text-center">
+          <Card className="bg-background/50 p-6 text-center">
             <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
               <DollarSign className="w-8 h-8 text-primary" />
             </div>
@@ -130,7 +156,7 @@ export function CloudBenefits() {
             <p className="text-sm text-muted-foreground mt-2">Average savings in first year alone</p>
           </Card>
 
-          <Card className="p-6 text-center">
+          <Card className="bg-background/50 p-6 text-center">
             <div className="inline-flex p-3 bg-secondary rounded-full mb-4">
               <TrendingUp className="w-8 h-8 text-primary" />
             </div>
@@ -141,18 +167,18 @@ export function CloudBenefits() {
         </div>
 
         {/* Workload Distribution */}
-        <Card className="p-6">
+        <Card className="bg-background/50 p-6">
           <h3 className="text-xl mb-6 text-center text-foreground">Typical Cloud Workload Distribution</h3>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <ResponsiveContainer width={300} height={300}>
-              <PieChart>
+            <ResponsiveContainer width={320} height={320}>
+              <PieChart margin={{ top: 12, right: 36, bottom: 12, left: 36 }}>
                 <Pie
                   data={workloadData}
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                  outerRadius={100}
+                  label={renderWorkloadLabel}
+                  outerRadius={88}
                   fill="#8884d8"
                   dataKey="value"
                 >

@@ -60,3 +60,4 @@ build/
 frontend/.git
 Library/
 .cache/
+src/plan.md

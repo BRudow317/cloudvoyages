@@ -1,5 +1,5 @@
-import { TopNav } from '@/sections/TopNav';
-import { Footer } from '@/sections/Footer';
+import { TopNav } from '@/components/nav/TopNav';
+import { Footer } from '@/components/sections/Footer';
 import { Outlet } from 'react-router';
 import image from '@/assets/NightSky.jpg';
 //import { ImageWithFallback } from '@/components/Fallback/ImageWithFallback';
@@ -28,10 +28,17 @@ function LayoutShell() {
   const { open, setOpen, openDialog } = useConsultationDialog();
 
   return (
-    <div
-      style={{ backgroundImage: `url(${image})` }}
-      className="min-h-screen bg-center bg-no-repeat bg-scroll bg-[length:100%_auto] sm:bg-cover sm:bg-fixed flex-grow"
-    >
+    <div className="min-h-screen relative overflow-hidden flex-grow">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <img
+          src={image}
+          alt=""
+          className="absolute left-0 top-0"
+          style={{ width: '100vw', height: '100vh', minWidth: '720px', minHeight: '720px', objectFit: 'cover' }}
+          aria-hidden="true"
+        />
+      </div>
+
       <TopNav onGetStarted={openDialog} />
       <main>
         <Outlet />

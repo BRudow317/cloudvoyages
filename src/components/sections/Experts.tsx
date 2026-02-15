@@ -1,5 +1,5 @@
 import { AlertTriangle, CheckCircle2, XCircle } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import Card from '@/components/ui/card/Card.tsx';
 import { ImageWithFallback } from '@/components/Fallback/ImageWithFallback';
 
 const riskFactors = [
@@ -29,7 +29,7 @@ const riskFactors = [
   },
 ];
 
-export function WhyExperts() {
+export function Experts() {
   return (
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

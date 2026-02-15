@@ -2,7 +2,7 @@
  * @PageName Privacy
  */
 import { ShieldCheck, Mail, MapPin, Clock } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import Card from '@/components/ui/card/Card';
 import { BrandText } from '@/components/ui/Brand';
 import { PERSONAL_DATA } from '@/constants/PERSONAL_DATA';
 
